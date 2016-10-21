@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-sale=1">
+        <title>Go With Your Gut</title>
+        
+        <link href="style.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+        
+        <!-- link to jQuery and Bootstrap -->
+        <script type = "text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type = "text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+        <script type = "text/javascript" src = "https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+         
+        <!-- supplementary js scripts -->
+        <script type = "text/javascript" src="https://unpkg.com/simple-statistics@2.2.0/dist/simple-statistics.min.js"></script>
+        <script type = "text/javascript" src="js/combs.js"></script>
+
+        <!-- main script -->
+        <script type = "text/javascript" src="js/main.js"></script>
+        
+        <!--image templates-->
+        <script id="checkTemplate" type="text/x-jQuery-tmpl">
+            <img class="checkImg" id="id${id}" src="${image}">
+        </script>
+        <script id="compareTemplate" type="text/x-jQuery-tmpl">
+            <img class="compareImg" id="id${id}" src="${image}">
+        </script>
+        <script id="resultTemplate" type="text/x-jQuery-tmpl">
+            <div class="resulttemp">
+            <p>And the winner is...</p>
+            <img class="resultImg" src="${image}">
+            </div>
+        </script>
+        <script id="result2Template" type="text/x-jQuery-tmpl">
+            <div class="result2temp">
+            <p>Your ${superl} reaction was between these:</p>
+            <img class="result2Img" src="${image1}"><img class="result2Img" src="${image2}">
+            <p>out of which you chose:</p>
+            <img class="result3Img" src="${image3}">
+            </div>
+        </script>
+        
+        <!--text templates-->
+        <script id="checkTextTemplate" type="text/x-jQuery-tmpl">
+            <span class="checkText" id="id${id}">${text}</span>
+        </script>
+        <script id="compareTextTemplate" type="text/x-jQuery-tmpl">
+            <span class="compareText" id="id${id}">${text}</span>
+        </script>
+        <script id="resultTextTemplate" type="text/x-jQuery-tmpl">
+            <div class="resulttemp">
+            <p>And the winner is...</p>
+            <span class="resultText" id="id${id}">${text}</span>
+            </div>
+        </script>
+        <script id="result2TextTemplate" type="text/x-jQuery-tmpl">
+            <div class="result2temp">
+            <p>Your ${superl} reaction was between these:</p>
+            <span class="result2Text">${text1}</span><span class="result2Text">${text2}</span>
+            <p>out of which you chose:</p>
+            <span class="result3Text">${text3}</span>
+            </div>
+        </script>
+        
+    </head>
+    
+    <body>
+       <div class="container">
+            
+            <div class="heading">
+          
+               <h1 class="top"><a href="">Go With Your Gut</a></h1>
+               <h2 class="top">because a fast reaction is a sure reaction</h2>
+               <p>Having trouble with a decision? Don't overthink things. Give us the things you're deciding between and we'll throw them back to you two by two - all you have to do is pick which you prefer out of the two <em>as quickly as you can</em>.</p>
+           
+           </div>
+           
+            <!--THIS IS WHERE THE STARTUP FORMS GO-->
+            
+            <div class="formdiv">  
+
+                <div align="center"><br><br>Fill in either image URLs or text choices below.<br><br></div>
+                
+                <! -- form for entering image URLs and/or labels -->
+                <form class="form1" role = "form">
+                    <div class = "form-group">
+                        <label for = "images">Image URLs</label>
+                        <input type = "text" class = "form-control" id = "images" placeholder="1.png,2.png,3.png">
+                        <br>               
+                        <label for="labels">Text choices</label>
+                        <input type="text" class="form-control" id="labels" placeholder="macaroni cheese,jacket potato,chicken noodles,ham sandwich">
+                        
+                        <br>
+                        <label for="timing">Timing On? </label> <input type="checkbox" id="timing" checked>
+                        
+                        <br><br>
+                        <button type="button" onclick="submitForm1()" class="btn btn-default">Submit</button>
+                    </div>
+                </form>
+                
+            </div>
+               
+            
+            
+            <!--THIS IS WHERE THE IMAGE COMPARISON GOES-->
+            
+            <div class="comparediv">
+            </div>
+            
+            <div class="confirmdiv">
+                <a onclick="confirmCheck()"><span class="flash" id="confirm" style="width: 200px; padding: 5px;">Hit any key to confirm</span></a>
+            </div>
+            
+            <div class="flashdiv" style="display: block;"> <!--ie the A and D buttons that flash-->
+                <span class="flash" id="S">S</span>
+                <span class="flash" id="F">F</span>
+                <span class="flash" id="J">J</span>
+                <span class="flash" id="L">L</span>
+
+                <br>
+
+                <span class="flash" style="background-color: white; color: lightblue;">&lt;&lt;</span>
+                <span class="flash" style="background-color: white; color: lightblue;">&lt;</span>
+                <span class="flash" style="background-color: white; color: lightblue;">&gt;</span>
+                <span class="flash" style="background-color: white; color: lightblue;">&gt;&gt;</span>
+
+            </div>
+               
+            
+           <!--THIS IS WHERE THE RESULT GOES-->
+               
+            <div class="resultdiv">
+                
+            </div>
+                
+                 
+                       
+                                   
+       </div>
+
+        
+    </body>
+    
+    
+</html>
