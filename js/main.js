@@ -264,6 +264,8 @@ function showResults() {
         $('#result2TextTemplate').tmpl(min).appendTo(".resultdiv");
         $('#result2TextTemplate').tmpl(max).appendTo(".resultdiv");
     }
+
+    $(".resultdiv").append('<br><a onclick="location.reload();"><span class="flash" style="width: 200px; padding: 5px;">Go again!</span></a>');
     window.scrollTo(0,0);  
 
 }

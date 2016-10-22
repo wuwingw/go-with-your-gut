@@ -90,6 +90,10 @@ a > img:hover{
     cursor: pointer;
 }
 
+.flash :hover {
+    background-color: skyblue;
+}
+
 /*Result stuff*/
 .resultdiv {
     text-align: center;
