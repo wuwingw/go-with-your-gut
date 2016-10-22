@@ -65,12 +65,12 @@ a > img:hover{
     nahheight: 200px;
 }
 .compareImg {
-    max-width: 400px;
+    max-width: 35%;
     margin: 10px;
 }
 .compareText {
     display: inline-block;
-    width: 400px;
+    width: 35%;
     padding: 5px;
     margin: 10px;
     background-color: deepskyblue;
