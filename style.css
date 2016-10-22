@@ -87,6 +87,7 @@ a > img:hover{
     background-color: deepskyblue;
     width: 100px;
     margin: 10px;
+    cursor: pointer;
 }
 
 /*Result stuff*/

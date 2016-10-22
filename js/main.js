@@ -24,16 +24,12 @@ $(document).ready(function() {
             kickOff();
         } else if(combno >= 0) {
             if(ev.which==83) { //S
-                $("#S").effect("highlight", {color:"white"},300);
                 imageClick(objects[combs[combno][0]].id,"S");
             } else if (ev.which==70) { //F
-                $("#F").effect("highlight", {color:"white"},300);
-                imageClick(objects[combs[combno][1]].id,"F");
+                imageClick(objects[combs[combno][0]].id,"F");
             } else if (ev.which==74) { //J
-                $("#J").effect("highlight", {color:"white"},300);
                 imageClick(objects[combs[combno][1]].id,"J");                           
             } else if (ev.which==76) { //L
-                $("#L").effect("highlight", {color:"white"},300);
                 imageClick(objects[combs[combno][1]].id,"L");                          
             }
         }
@@ -102,7 +98,8 @@ function showCheck() {
 }
 
 function confirmCheck() {
-    $('.confirmdiv').html("Get ready and position your fingers over the <b>S, F, J</b> and <b>L</b> keys.<p>Press any key to start!");
+    $('.confirmdiv').html("Get ready and position your fingers over the <b>S, F, J</b> and <b>L</b> keys.<br>");
+    $('.confirmdiv').append('<a onclick="kickOff()"><span class="flash" id="confirm" style="width: 200px; padding: 5px;">Hit any key to start!</span></a>');
     combno = -3;
 }
 
@@ -152,6 +149,8 @@ function imageClick(id,letter) { // called by keypresses too
     var timeDifference = compEndTime.getTime() - compStartTime.getTime();
 
     timeDifferences.push(timeDifference); // build up list of all comparison times
+
+    $("#" + letter).effect("highlight", {color:"white"},300); // flash
 
     var pair = new Object();
     pair.time = timeDifference;
