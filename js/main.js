@@ -1,7 +1,7 @@
 // global vars
 
 var usingimages = true; // whether user has provided image urls
-var timing = true; // whether user has turned timing on/off
+var timing = true; // always on
 var images = []; // user-provided image urls
 var labels = []; // user-provided labels
 var objects = []; // combined urls and labels for template
@@ -54,8 +54,6 @@ function submitForm1() {
             images.push(loopme[i]);
         }                    
     }
-
-    timing = $('#timing').is(':checked');
     
     $('.form1').hide();
     $('.formdiv').hide();
